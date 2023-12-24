@@ -16,7 +16,6 @@ How to play:
  -  Multiple differents Road Chunks.
  -  Enemies.
  -  Multiple UI Panels: Menu, Game, Game Over, Level Complete, Settings and Shop Panel.
- -  SFX.
  -  Design Patterns: **Observer and Singleton**.
  -  Managers: UI, Game, Sounds, Settings, Data, Chunk and Shop.
 
