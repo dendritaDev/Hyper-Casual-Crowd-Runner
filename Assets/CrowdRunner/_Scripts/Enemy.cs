@@ -42,22 +42,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void RunTowardsTarget()
+    private void SearchForTarget()
     {
-        if(targetRunner == null)
+        Collider[] detectedColliders = Physics.OverlapSphere(transform.position, searchRadius);
+
+        for (int i = 0; i < detectedColliders.Length; i++)
         {
-            return;
-        }
+            if (detectedColliders[i].TryGetComponent(out Runner runner))
+            {
+                if (runner.IsTarget())
+                    continue;
 
-        transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, moveSpeed * Time.deltaTime);
+                runner.SetTarget();
+                targetRunner = runner.transform;
 
-        if(Vector3.Distance(transform.position, targetRunner.position) < 0.1f)
-        {
-            Destroy(targetRunner.gameObject);
-            Destroy(gameObject);
-
-            onRunnerDied?.Invoke(); 
-            
+                StartRunningTowardsTarget();
+                return;
+            }
         }
     }
 
@@ -67,22 +68,18 @@ public class Enemy : MonoBehaviour
         GetComponent<Animator>().Play("Run");
     }
 
-    private void SearchForTarget()
+    private void RunTowardsTarget()
     {
-        Collider[] detectedColiders = Physics.OverlapSphere(transform.position, searchRadius);
+        if (targetRunner == null)
+            return;
 
-        for (int i = 0; i < detectedColiders.Length; i++)
+        transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, Time.deltaTime * moveSpeed);
+
+        if (Vector3.Distance(transform.position, targetRunner.position) < .1f)
         {
-            if (detectedColiders[i].TryGetComponent(out Runner runner))
-            {
-                if (runner.IsTarget())
-                    continue;
-
-                runner.SetTarget();
-                targetRunner = runner.transform;
-
-                StartRunningTowardsTarget();
-            }
+            Destroy(targetRunner.gameObject);
+            Destroy(gameObject);
         }
     }
 }
+
