@@ -10,7 +10,7 @@ How to play:
 - Make critical decisions at the magical gates to maximize your crowd's potential.
 
 ## Features
- -  Crowd Logic.
+ -  Crowd Logic: **Fermat spiral and Golden Ratio** https://en.wikipedia.org/wiki/Fermat%27s_spiral
  -  Runners with different skins to unlock with coins.
  -  Gates to maximize crowd's potential.
  -  Multiple differents Road Chunks.
