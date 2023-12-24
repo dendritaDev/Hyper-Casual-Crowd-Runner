@@ -33,10 +33,7 @@ https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/assets/107819892/0
   <tr>
     <td><img src="https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/blob/main/GameImg.png" alt="Game 1"></td>
     <td><img src="https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/blob/main/LevelCompetedImg.png" alt="LevelCompleted"></td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/blob/main/ShopImg.png" alt="Shop"></td>
+      <td><img src="https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/blob/main/ShopImg.png" alt="Shop"></td>
     <td><img src="https://github.com/dendritaDev/Hyper-Casual-CrowdRunner-Unity/blob/main/SettingsImg.png" alt="Settings"></td>
-    <td></td>
   </tr>
 </table>
